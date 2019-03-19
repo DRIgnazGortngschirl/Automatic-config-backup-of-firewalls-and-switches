@@ -40,12 +40,12 @@ echo '# |_____/|______|______|______|  |_____/ \___| \_/ |_|\___\___||___/' >> .
 echo '# IP' >> ./Devices/DELL-Devices.txt
 echo "Devices List's where created"
 
-# Phase 3 create all modules
-echo '# Paste here the script for Fortinet Backups' >> ./Modules/Backup-Script-Fortinet.sh
-echo '# Paste here the script for DELL Backups' >> ./Modules/Backup-Script-Dell.sh
-echo '# Paste here the script for HP Backups' >> ./Modules/Backup-Script-Hp.sh
-echo '# Paste here the script for Cisco Backups' >> ./Modules/Backup-Script-Cisco.sh
-echo "Modules where created"
+# Phase 3 move all modules to ./Modules directory
+mv Backup-Script-Fortinet.sh ./Modules/Backup-Script-Fortinet.sh
+mv Backup-Script-Dell.sh ./Modules/Backup-Script-Dell.sh 
+mv Backup-Script-Hp.sh ./Modules/Backup-Script-Hp.sh
+mv Backup-Script-Cisco.sh ./Modules/Backup-Script-Cisco.sh
+echo "Modules where moved"
 
 # Phase 4 create the main lanucher for all modules
 echo './Modules/Backup-Script-Fortinet.sh' >> ./Backup-Script-Module-Launcher.sh 

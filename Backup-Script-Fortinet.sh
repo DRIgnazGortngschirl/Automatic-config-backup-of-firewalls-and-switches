@@ -10,7 +10,7 @@ echo "Started Backup of Config's"
 
 user=backup
 
-for device in `cat ./devices/fortinet-devices.txt | egrep -v "^\s*(#|$)"` # Will have a look in the file "fortinet-devices.txt" for all fortinet devices
+for device in `cat ./Devices/Fortinet-Devices.txt | egrep -v "^\s*(#|$)"` # Will have a look in the file "fortinet-devices.txt" for all fortinet devices
 do
     echo -e "Host found in hostfile \e[35m$device\e[39m"
     scp $user@$device:sys_config ~/BackupConfigFortinet # Will ssh to all devices in "fortinet-devices.txt" and copy it secure localy 

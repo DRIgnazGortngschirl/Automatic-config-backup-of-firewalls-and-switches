@@ -19,7 +19,7 @@ echo "Started Backup of Config's"
 
 user=backup
 
-for device in `cat ./Devices/Cicso-Devices.txt` # Will have a look in the file "cisco-devices.txt" for all Cisco devices
+for device in `cat ./Devices/Cicso-Devices.txt | egrep -v "^\s*(#|$)"` # Will have a look in the file "cisco-devices.txt" for all Cisco devices
 do
     ssh-keyscan -H $device1 >> ~/.ssh/known_hosts
     sshpass -p $passwd1 ssh $user1@$device1 'terminal pager 0'

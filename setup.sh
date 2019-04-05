@@ -3,7 +3,7 @@
 # SETUP
 
 # Phase 1 create all directorys
-mkdir ./Achriv
+mkdir ./Archiv
 mkdir ./Devices
 mkdir ./Modules
 mkdir ./SSH-Keys

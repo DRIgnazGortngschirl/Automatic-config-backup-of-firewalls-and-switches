@@ -19,7 +19,7 @@ echo "Started Backup of Config's"
 
 user=backup
 
-for device in `cat ./Devices/DELL-Devices.txt`  # Will have a look in the file "DELL-Devices.txt" for all DELL devices
+for device in `cat ./Devices/DELL-Devices.txt | egrep -v "^\s*(#|$)"`  # Will have a look in the file "DELL-Devices.txt" for all DELL devices
 do
     echo -e "Host found in hostfile \e[35m$device\e[39m"
     ssh-keyscan -H $device >> ~/.ssh/known_hosts

@@ -11,9 +11,8 @@
 
 # INSTALLATION
 
-# 1. Start the setup.sh and generate a SSH Key Pair
-# 2. Create a user "backup" on the network device
-# 3. Add SSH Key for Authentification for the user
+# 1. Create a user "backup" on the network device
+# 2. Add SSH Key for Authentification for the user
 
 echo "Started Backup of Config's"
 

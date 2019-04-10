@@ -68,7 +68,7 @@ ssh-keygen -t rsa -b 4096 -f ./SSH-Keys/Backup-SSH-Key
 # Phase 7 show the new created Public SSH-Key
 clear
 echo "-----BEGIN PUBLIC KEY-----"
-echo "$(cat ./SSH-Keys/Backup-SSH-Key.pub)" | awk '{print $2}' | sed 's/\=//g'
+echo "$(cat ./SSH-Keys/Backup-SSH-Key.pub)" | awk '{print $2,$3}'
 echo "-----END PUBLIC KEY-----"
 echo " "
 echo "IT'S DONE !"

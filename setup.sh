@@ -63,7 +63,17 @@ chmod 700 ./Modules/Backup-Script-Cisco.sh
 echo "Modules & Lanucher where modified"
 
 # Phase 6 create SSH Key
-ssh-keygen -t rsa -b 4096 -f ./SSH-Keys/Backup-SSH-Key
+clear
+echo "----------------------------------------"
+echo '1024 bit - ONLY FOR TESTING'
+echo '2048 bit - It is "secure" until 2030!'
+echo "4096 bit - Will be fine"
+echo "8192 bit - Are you paranoid ?"
+echo "16384 bit - What are you transferring?"
+echo "----------------------------------------"
+echo "Enter bit lenth (only Numbers)"
+read rsakeylenth
+ssh-keygen -t rsa -b $rsakeylenth -f ./SSH-Keys/Backup-SSH-Key
 
 # Phase 7 show the new created Public SSH-Key
 clear

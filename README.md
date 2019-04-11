@@ -8,4 +8,4 @@ Step 1. Clone the repository. ``` git clone https://github.com/MrMarioMichel/Aut
 
 Step 2. Exceute the setup.sh. ```chmod 700 ./setup.sh && ./setup.sh```
 
-Step 3. Add in Devices/<Vendor>-Devices.txt all the IP's or domains to get the configs from.
+Step 3. Add in Devices/VENDOR-Devices.txt all the IP's or domains to get the configs from.

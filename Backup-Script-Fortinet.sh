@@ -15,5 +15,5 @@ do
     scp -i ./SSH-Keys/Backup-SSH-Key $device:sys_config ./BackupConfigFortinet # Will copy to all devices in "Fortinet-Devices.txt" and copy it secure localy
     name=`grep -m1 'set hostname' BackupConfigFortinet | sed 's|["?]||g' | sed 's/\<set hostname\>//g' | sed 's/ //g' | tr -dc '[:print:]'`
     mkdir Archiv/$name >> /dev/null
-    mv BackupConfigFortinet ./Archiv/$name/$name-$(date +"%H:%M-%d.%m.%Y").conf
+    mv BackupConfigFortinet ./Archiv/$name/$name-$(date +"%H_%M-%d_%m_%Y").conf
 done

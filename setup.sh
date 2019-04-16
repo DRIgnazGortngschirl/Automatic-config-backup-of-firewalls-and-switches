@@ -7,6 +7,7 @@ mkdir ./Archiv
 mkdir ./Devices
 mkdir ./Modules
 mkdir ./SSH-Keys
+mkdir -p Log/{Fortinet,HP,Cisco,DELL}
 echo "Directories where created"
 
 # Phase 2 create all device list's

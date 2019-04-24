@@ -17,7 +17,7 @@
 user=backup
 date=`date +%d%m%y`
 
-echo "Started Backup of Config's"
+echo "Started Backup of Config's"  &>> Log/log$date.txt
 
 for device in `cat ./Devices/Cicso-Devices.txt | egrep -v "^\s*(#|$)"` # Will have a look in the file "cisco-devices.txt" for all Cisco devices
 do

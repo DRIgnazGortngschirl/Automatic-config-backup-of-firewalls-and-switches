@@ -14,9 +14,10 @@
 # 1. Create a user "backup" on the network device
 # 2. Add SSH Key for Authentification for the user
 
-echo "Started Backup of Config's"
-
 user=backup
+date=`date +%d%m%y`
+
+echo "Started Backup of Config's" &>> Log/log$date.txt
 
 for device in `cat ./Devices/HP-Devices.txt | egrep -v "^\s*(#|$)"` # Will have a look in the file "hp-devices.txt" for all HP devices
 do

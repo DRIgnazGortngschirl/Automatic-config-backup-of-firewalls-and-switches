@@ -9,6 +9,7 @@ user=backup
 date=`date +%d%m%y`
 
 cd
+cd Automatic-config-backup-of-firewalls-and-switches
 
 echo "Started Backup of Config's" &>> Log/Fortinet/log$date.txt
 

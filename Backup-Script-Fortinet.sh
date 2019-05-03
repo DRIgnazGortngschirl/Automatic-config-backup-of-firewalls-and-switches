@@ -6,13 +6,12 @@
 # 2. Add SSH Key for Authentification for the user(No Password!!!)
 
 user=backup
-
+date=`date +%d%m%y`
 
 echo "Started Backup of Config's" &>> Log/Fortinet/log$date.txt
 
 for device in `cat ./Devices/Fortinet-Devices.txt | egrep -v "^\s*(#|$)"` # Will have a look in the file "Fortinet-Devices.txt" for all fortinet devices
 do
-    date=`date +%d%m%y`
     echo -e "Host found in hostfile \e[35m$device\e[39m" &>> Log/Fortinet/log$date.txt
     scp -v -i ./SSH-Keys/Backup-SSH-Key $device:sys_config ./BackupConfigFortinet &>> Log/Fortinet/log$date.txt # Will copy to all devices in "Fortinet-Devices.txt" and copy it secure localy
     name=`pv BackupConfigFortinet | grep -m1 'set hostname' | sed 's|["?]||g' | sed 's/\<set hostname\>//g' | sed 's/ //g' | tr -dc '[:print:]'` &>> Log/Fortinet/log$date.txt # Will search for the host name to set create a directory and a file named like the hostname of the network device 

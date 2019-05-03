@@ -8,6 +8,8 @@
 user=backup
 date=`date +%d%m%y`
 
+cd
+
 echo "Started Backup of Config's" &>> Log/Fortinet/log$date.txt
 
 for device in `cat ./Devices/Fortinet-Devices.txt | egrep -v "^\s*(#|$)"` # Will have a look in the file "Fortinet-Devices.txt" for all fortinet devices

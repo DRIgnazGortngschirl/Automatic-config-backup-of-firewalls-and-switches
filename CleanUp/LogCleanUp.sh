@@ -12,6 +12,6 @@ then
     echo "I will DELETE now ALL Logs"
 sleep 3
 cd ../
-find ./Logs -maxdepth 1 -type f -exec rm -fv {} \;
+find ./Log -maxdepth 1 -type f -exec rm -fv {} \;
 fi
 fi

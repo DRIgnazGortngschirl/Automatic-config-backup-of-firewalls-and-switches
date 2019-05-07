@@ -13,7 +13,7 @@ cd Automatic-config-backup-of-firewalls-and-switches
 
 echo "Started Backup of Config's" &>> Log/Fortinet/log$date.txt
 
-for device in `cat ./Devices/Fortinet-Devices.txt | egrep -v "^\s*(#|$)"` # Will have a look in the file "Fortinet-Devices.txt" for all fortinet devices
+for device in `cat ./Devices/Fortinet-Devices.txt | egrep -v "^\s*(#|$)" | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"` # Will have a look in the file "Fortinet-Devices.txt" for all fortinet devices
 do
     echo -e "Host found in hostfile \e[35m$device\e[39m" &>> Log/Fortinet/log$date.txt
     scp -v -i ./SSH-Keys/Backup-SSH-Key $device:sys_config ./BackupConfigFortinet &>> Log/Fortinet/log$date.txt # Will copy to all devices in "Fortinet-Devices.txt" and copy it secure localy

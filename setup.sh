@@ -3,11 +3,11 @@
 # SETUP
 
 # Phase 1 create all directorys
-mkdir ./Archiv
-mkdir ./Devices
-mkdir ./Modules
-mkdir ./SSH-Keys
-mkdir -p Log/{Fortinet,HP,Cisco,DELL}
+mkdir --verbose ./Archiv
+mkdir --verbose ./Devices
+mkdir --verbose ./Modules
+mkdir --verbose ./SSH-Keys
+mkdir --verbose -p Log/{Fortinet,HP,Cisco,DELL}
 echo "Directories where created"
 
 # Phase 2 create all device list's
@@ -42,10 +42,10 @@ echo '# IP' >> ./Devices/DELL-Devices.txt
 echo "Devices List's where created"
 
 # Phase 3 move all modules to ./Modules directory
-mv Backup-Script-Fortinet.sh ./Modules/Backup-Script-Fortinet.sh
-mv Backup-Script-Dell.sh ./Modules/Backup-Script-Dell.sh 
-mv Backup-Script-Hp.sh ./Modules/Backup-Script-Hp.sh
-mv Backup-Script-Cisco.sh ./Modules/Backup-Script-Cisco.sh
+mv --verbose Backup-Script-Fortinet.sh ./Modules/Backup-Script-Fortinet.sh
+mv --verbose Backup-Script-Dell.sh ./Modules/Backup-Script-Dell.sh 
+mv --verbose Backup-Script-Hp.sh ./Modules/Backup-Script-Hp.sh
+mv --verbose Backup-Script-Cisco.sh ./Modules/Backup-Script-Cisco.sh
 echo "Modules where moved"
 
 # Phase 4 create the main lanucher for all modules
@@ -56,11 +56,13 @@ echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh
 echo "Main Launcher where created"
 
 # Phase 5 make the files executable
-chmod 700 ./Backup-Script-Module-Launcher.sh
-chmod 700 ./Modules/Backup-Script-Fortinet.sh
-chmod 700 ./Modules/Backup-Script-Dell.sh
-chmod 700 ./Modules/Backup-Script-Hp.sh
-chmod 700 ./Modules/Backup-Script-Cisco.sh
+chmod --verbose 700 ./Backup-Script-Module-Launcher.sh
+chmod --verbose 700 ./Modules/Backup-Script-Fortinet.sh
+chmod --verbose 700 ./Modules/Backup-Script-Dell.sh
+chmod --verbose 700 ./Modules/Backup-Script-Hp.sh
+chmod --verbose 700 ./Modules/Backup-Script-Cisco.sh
+chmod --verbose 700 ./CleanUp/BackupConfigsCleanUp.sh
+chmod --verbose 700 ./CleanUp/LogCleanUp.sh
 echo "Modules & Lanucher where modified"
 
 # Phase 6 create SSH Key

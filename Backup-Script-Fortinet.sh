@@ -8,9 +8,6 @@
 user=backup
 date=`date +%d%m%y`
 
-cd
-cd Automatic-config-backup-of-firewalls-and-switches
-
 echo "Started Backup of Config's" &>> Log/Fortinet/log$date.txt
 
 for device in `cat ./Devices/Fortinet-Devices.txt | egrep -v "^\s*(#|$)" | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b"` # Will have a look in the file "Fortinet-Devices.txt" for all fortinet devices

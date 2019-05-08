@@ -69,6 +69,8 @@ mv --verbose Backup-Script-Cisco.sh ./Modules/Backup-Script-Cisco.sh
 echo "Modules where moved"
 
 # Phase 4 create the main lanucher for all modules
+path=`find / -name "*Automatic-config-backup-of-firewalls-and-switches" 2>/dev/null`
+echo "cd $path" >> ./Backup-Script-Module-Launcher.sh 
 echo './Modules/Backup-Script-Fortinet.sh' >> ./Backup-Script-Module-Launcher.sh 
 echo './Modules/Backup-Script-Dell.sh' >> ./Backup-Script-Module-Launcher.sh 
 echo './Modules/Backup-Script-Hp.sh' >> ./Backup-Script-Module-Launcher.sh 

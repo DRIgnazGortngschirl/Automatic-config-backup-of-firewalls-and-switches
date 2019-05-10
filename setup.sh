@@ -77,6 +77,7 @@ echo './Modules/Backup-Script-Fortinet.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Backup-Script-Dell.sh' >> ./Backup-Script-Module-Launcher.sh 
 echo './Modules/Backup-Script-Hp.sh' >> ./Backup-Script-Module-Launcher.sh 
 echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh 
+echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh 
 echo "Main Launcher where created"
 
 # Phase 5 make the files executable

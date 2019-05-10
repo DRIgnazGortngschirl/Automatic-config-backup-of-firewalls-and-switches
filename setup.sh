@@ -66,6 +66,7 @@ mv --verbose Backup-Script-Fortinet.sh ./Modules/Backup-Script-Fortinet.sh
 mv --verbose Backup-Script-Dell.sh ./Modules/Backup-Script-Dell.sh 
 mv --verbose Backup-Script-Hp.sh ./Modules/Backup-Script-Hp.sh
 mv --verbose Backup-Script-Cisco.sh ./Modules/Backup-Script-Cisco.sh
+mv --verbose Checker.sh ./Modules/Checker.sh
 echo "Modules where moved"
 
 # Phase 4 create the main lanucher for all modules
@@ -85,6 +86,7 @@ chmod --verbose 700 ./Modules/Backup-Script-Hp.sh
 chmod --verbose 700 ./Modules/Backup-Script-Cisco.sh
 chmod --verbose 700 ./CleanUp/BackupConfigsCleanUp.sh
 chmod --verbose 700 ./CleanUp/LogCleanUp.sh
+chmod --verbose 700 ./Modules/Checker.sh
 echo "Modules & Lanucher where modified"
 
 # Phase 6 create SSH Key

@@ -7,7 +7,7 @@ mkdir --verbose ./Archiv
 mkdir --verbose ./Devices
 mkdir --verbose ./Modules
 mkdir --verbose ./SSH-Keys
-mkdir --verbose -p Log/{Fortinet,HP,Cisco,DELL}
+mkdir --verbose -p Log/{Fortinet,HP,Cisco,DELL,BackupCheck}
 echo "Directories where created"
 
 # Phase 2 create all device list's

@@ -9,14 +9,14 @@ configsinachive=`find ./Archiv -maxdepth 2 -type f -mtime -1 | wc -l`
 
 total=`expr $fortinethostfilecount + $hphostfilecount + $ciscohostfilecount + $dellhostfilecount`
 
-echo "Fortinet : $fortinethostfilecount Hosts in Host File" &>> Log/log$date.txt
-echo "HP : $hphostfilecount Hosts in Host File" &>> Log/log$date.txt
-echo "Cisco $ciscohostfilecount Hosts in Host File" &>> Log/log$date.txt
-echo "DELL : $dellhostfilecount Hosts in Host File" &>> Log/log$date.txt
-echo "------------------------------------------------" &>> Log/log$date.txt
-echo "Lines in Host file $total" &>> Log/log$date.txt
-echo "Directorys in Archiv $dirsinachriv" &>> Log/log$date.txt
-echo "Current Configs in Achive $configsinachive" &>> Log/log$date.txt
-echo "These numbers should match!!!" &>> Log/log$date.txt
-echo "Otherwise you did not got all configs listed in the host files" &>> Log/log$date.txt
-echo "Start Fastdebug.sh to see more infos where those errors are" &>> Log/log$date.txt
+echo "Fortinet : $fortinethostfilecount Hosts in Host File" &>> ./Log/BackupCheck/log$date.txt
+echo "HP : $hphostfilecount Hosts in Host File" &>> ./Log/BackupCheck/log$date.txt
+echo "Cisco $ciscohostfilecount Hosts in Host File" &>> ./Log/BackupCheck/log$date.txt
+echo "DELL : $dellhostfilecount Hosts in Host File" &>> ./Log/BackupCheck/log$date.txt
+echo "------------------------------------------------" &>> ./Log/BackupCheck/log$date.txt
+echo "Lines in Host file $total" &>> ./Log/BackupCheck/log$date.txt
+echo "Directorys in Archiv $dirsinachriv" &>> ./Log/BackupCheck/log$date.txt
+echo "Current Configs in Achive $configsinachive" &>> ./Log/BackupCheck/log$date.txt
+echo "These numbers should match!!!" &>> ./Log/BackupCheck/log$date.txt
+echo "Otherwise you did not got all configs listed in the host files" &>> ./Log/BackupCheck/log$date.txt
+echo "Start Fastdebug.sh to see more infos where those errors are" &>> ./Log/BackupCheck/log$date.txt

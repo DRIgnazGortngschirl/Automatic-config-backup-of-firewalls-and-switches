@@ -4,6 +4,7 @@
 
 # Phase 1 create all directorys
 mkdir --verbose ./Archiv
+mkdir --verbose ./OldConfigs
 mkdir --verbose ./Devices
 mkdir --verbose ./Modules
 mkdir --verbose ./SSH-Keys
@@ -62,22 +63,25 @@ echo '# Use a "#" in front of a line to uncomment a line (This will be ignored f
 echo "Devices List's where created"
 
 # Phase 3 move all modules to ./Modules directory
-mv --verbose Backup-Script-Fortinet.sh ./Modules/Backup-Script-Fortinet.sh
-mv --verbose Backup-Script-Dell.sh ./Modules/Backup-Script-Dell.sh 
-mv --verbose Backup-Script-Hp.sh ./Modules/Backup-Script-Hp.sh
-mv --verbose Backup-Script-Cisco.sh ./Modules/Backup-Script-Cisco.sh
-mv --verbose Checker.sh ./Modules/Checker.sh
-mv --verbose Fastdebug.sh ./Modules/Fastdebug.sh
+mv --verbose ./Backup-Script-Fortinet.sh ./Modules/Backup-Script-Fortinet.sh
+mv --verbose ./Backup-Script-Dell.sh ./Modules/Backup-Script-Dell.sh 
+mv --verbose ./Backup-Script-Hp.sh ./Modules/Backup-Script-Hp.sh
+mv --verbose ./Backup-Script-Cisco.sh ./Modules/Backup-Script-Cisco.sh
+mv --verbose ./Checker.sh ./Modules/Checker.sh
+mv --verbose ./Fastdebug.sh ./Modules/Fastdebug.sh
 echo "Modules where moved"
 
 # Phase 4 create the main lanucher for all modules
 path=`find / -name "*Automatic-config-backup-of-firewalls-and-switches" 2>/dev/null`
-echo "cd $path" >> ./Backup-Script-Module-Launcher.sh 
-echo './Modules/Backup-Script-Fortinet.sh' >> ./Backup-Script-Module-Launcher.sh 
-echo './Modules/Backup-Script-Dell.sh' >> ./Backup-Script-Module-Launcher.sh 
-echo './Modules/Backup-Script-Hp.sh' >> ./Backup-Script-Module-Launcher.sh 
-echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh 
-echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh 
+echo "cd $path" >> ./Backup-Script-Module-Launcher.sh
+echo './Modules/Backup-Script-Fortinet.sh' >> ./Backup-Script-Module-Launcher.sh
+echo './Modules/Backup-Script-Dell.sh' >> ./Backup-Script-Module-Launcher.sh
+echo './Modules/Backup-Script-Hp.sh' >> ./Backup-Script-Module-Launcher.sh
+echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh
+echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh
+echo "Set time in days after a config gets send to long term Archiv (./OldConfigs)" 
+read achivetime
+echo "find ./Archiv/ -type f -name '*.conf' -mtime $achivetime --exec mv {} ./OldConfigs \;" ./Backup-Script-Module-Launcher.sh
 echo "Main Launcher where created"
 
 # Phase 5 make the files executable

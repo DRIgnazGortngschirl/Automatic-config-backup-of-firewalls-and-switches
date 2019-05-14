@@ -83,7 +83,7 @@ echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh
 echo "Set time in days after a config gets send to long term Archiv (./OldConfigs)" 
 read achivetime
 echo "find ./Archiv/ -type f -name '*.conf' -mtime $achivetime --exec mv {} ./OldConfigs \;" >> ./Backup-Script-Module-Launcher.sh
-echo "du -sh ./Archiv/" >> ./Log/BackupCheck/log$date.txt
+echo "du -sh ./Archiv/ >> ./Log/BackupCheck/log$date.txt" >> ./Backup-Script-Module-Launcher.sh
 echo "Main Launcher where created"
 
 # Phase 5 make the files executable

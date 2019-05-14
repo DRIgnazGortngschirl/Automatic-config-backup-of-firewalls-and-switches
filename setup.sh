@@ -4,7 +4,6 @@
 
 # Phase 1 create all directorys
 mkdir --verbose ./Archiv
-mkdir --verbose ./OldConfigs
 mkdir --verbose ./Devices
 mkdir --verbose ./Modules
 mkdir --verbose ./SSH-Keys
@@ -87,9 +86,9 @@ echo './Modules/Backup-Script-Hp.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/ArchivStats.sh' >> ./Backup-Script-Module-Launcher.sh
-echo "Set time in days after a config gets send to long term Archiv (./OldConfigs)" 
+echo "Set days after a config gets commpressed (.gz format)" 
 read achivetime
-echo "find ./Archiv/ -type f -name '*.conf' -mtime $achivetime --exec mv {} ./OldConfigs \;" >> ./Modules/OldConfigsMover.sh
+echo "find ./Archiv -mtime +$achivetime -exec gzip {} +" >> ./Modules/OldConfigsMover.sh
 echo "du -sh ./Archiv/ >> ./Log/BackupCheck/log$date.txt" >> ./Modules/ArchivStats.sh
 echo "Main Launcher where created"
 

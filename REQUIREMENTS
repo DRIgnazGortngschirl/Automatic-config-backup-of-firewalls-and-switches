@@ -1,3 +1,6 @@
 pv - monitor the progress of data through a pipe
 ssh-keygen — authentication key generation, management and conversion
 scp — secure copy (remote file copy program)
+du - estimate file space usage
+find - search for files in a directory hierarchy
+gzip, gunzip, zcat - compress or expand files

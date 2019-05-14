@@ -73,6 +73,7 @@ echo "Modules where moved"
 
 # Phase 4 create the main lanucher for all modules
 path=`find / -name "*Automatic-config-backup-of-firewalls-and-switches" 2>/dev/null`
+echo "date=`date +%d%m%y`" >> ./Backup-Script-Module-Launcher.sh
 echo "cd $path" >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Backup-Script-Fortinet.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Backup-Script-Dell.sh' >> ./Backup-Script-Module-Launcher.sh
@@ -81,7 +82,8 @@ echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh
 echo "Set time in days after a config gets send to long term Archiv (./OldConfigs)" 
 read achivetime
-echo "find ./Archiv/ -type f -name '*.conf' -mtime $achivetime --exec mv {} ./OldConfigs \;" ./Backup-Script-Module-Launcher.sh
+echo "find ./Archiv/ -type f -name '*.conf' -mtime $achivetime --exec mv {} ./OldConfigs \;" >> ./Backup-Script-Module-Launcher.sh
+echo "du -sh ./Archiv/" >> ./Log/BackupCheck/log$date.txt
 echo "Main Launcher where created"
 
 # Phase 5 make the files executable

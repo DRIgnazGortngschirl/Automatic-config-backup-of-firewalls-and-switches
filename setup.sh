@@ -24,6 +24,7 @@ echo '# <IP or Domain> --> <Hostname>' >> ./Devices/Fortinet-Devices.txt
 echo '# 1.1.1.1 --> CloudFlare' >> ./Devices/Fortinet-Devices.txt
 echo '# #8.8.8.8 --> Uncommented line' >> ./Devices/Fortinet-Devices.txt
 echo '# Use a "#" in front of a line to uncomment a line (This will be ignored from the BackupScript)' >> ./Devices/Fortinet-Devices.txt
+echo "├── Fortinet Done"
 echo '# _    _ _____     _____             _' >> ./Devices/HP-Devices.txt
 echo '#| |  | |  __ \   |  __ \           (_)' >> ./Devices/HP-Devices.txt
 echo '#| |__| | |__) |  | |  | | _____   ___  ___ ___  ___' >> ./Devices/HP-Devices.txt
@@ -36,6 +37,7 @@ echo '# <IP or Domain> --> <Hostname>' >> ./Devices/HP-Devices.txt
 echo '# 1.1.1.1 --> CloudFlare' >> ./Devices/HP-Devices.txt
 echo '# #8.8.8.8 --> Uncommented line' >> ./Devices/HP-Devices.txt
 echo '# Use a "#" in front of a line to uncomment a line (This will be ignored from the BackupScript)' >> ./Devices/HP-Devices.txt
+echo "├── HP Done"
 echo '#   _____ _____  _____  _____ ____     _____             _ ' >> ./Devices/Cisco-Devices.txt
 echo '#  / ____|_   _|/ ____|/ ____/ __ \   |  __ \           (_)' >> ./Devices/Cisco-Devices.txt
 echo '# | |      | | | (___ | |   | |  | |  | |  | | _____   ___  ___ ___  ___ ' >> ./Devices/Cisco-Devices.txt
@@ -48,6 +50,7 @@ echo '# <IP or Domain> --> <Hostname>' >> ./Devices/Cisco-Devices.txt
 echo '# 1.1.1.1 --> CloudFlare' >> ./Devices/Cisco-Devices.txt
 echo '# #8.8.8.8 --> Uncommented line' >> ./Devices/Cisco-Devices.txt
 echo '# Use a "#" in front of a line to uncomment a line (This will be ignored from the BackupScript)' >> ./Devices/Cisco-Devices.txt
+echo "├── Cisco Done"
 echo '#  _____  ______ _      _         _____             _' >> ./Devices/DELL-Devices.txt
 echo '# |  __ \|  ____| |    | |       |  __ \           (_)' >> ./Devices/DELL-Devices.txt
 echo '# | |  | | |__  | |    | |       | |  | | _____   ___  ___ ___  ___ ' >> ./Devices/DELL-Devices.txt
@@ -60,6 +63,7 @@ echo '# <IP or Domain> --> <Hostname>' >> ./Devices/DELL-Devices.txt
 echo '# 1.1.1.1 --> CloudFlare' >> ./Devices/DELL-Devices.txt
 echo '# #8.8.8.8 --> Uncommented line' >> ./Devices/DELL-Devices.txt
 echo '# Use a "#" in front of a line to uncomment a line (This will be ignored from the BackupScript)' >> ./Devices/DELL-Devices.txt
+echo "└── DELL Done"
 echo "Devices List's where created"
 
 # Phase 3 move all modules to ./Modules directory

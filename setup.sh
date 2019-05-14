@@ -86,7 +86,7 @@ echo './Modules/Backup-Script-Hp.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/ArchivStats.sh' >> ./Backup-Script-Module-Launcher.sh
-echo "Set days after a config gets commpressed (.gz format)" 
+echo "Set days after a config gets commpressed (.gz format) [2,5x-3,5x SMALLER]" 
 read achivetime
 echo "find ./Archiv -mtime +$achivetime -exec gzip {} +" >> ./Modules/OldConfigsMover.sh
 echo "du -sh ./Archiv/ >> ./Log/BackupCheck/log$date.txt" >> ./Modules/ArchivStats.sh

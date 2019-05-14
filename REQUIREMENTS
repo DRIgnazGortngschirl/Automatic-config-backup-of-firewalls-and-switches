@@ -2,6 +2,7 @@ cat - concatenate files and print on the standard output
 du - estimate file space usage
 echo -- display a line of text
 find - search for files in a directory hierarchy
+git - the stupid content tracker
 grep, egrep, fgrep, rgrep - print lines matching a pattern
 gzip, gunzip, zcat - compress or expand files
 mkdir - make directories

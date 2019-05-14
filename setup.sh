@@ -69,6 +69,8 @@ mv --verbose ./Backup-Script-Hp.sh ./Modules/Backup-Script-Hp.sh
 mv --verbose ./Backup-Script-Cisco.sh ./Modules/Backup-Script-Cisco.sh
 mv --verbose ./Checker.sh ./Modules/Checker.sh
 mv --verbose ./Fastdebug.sh ./Modules/Fastdebug.sh
+mv --verbose ./OldConfigsMover.sh ./Modules/OldConfigsMover.sh
+mv --verbose ./ArchivStats.sh ./Modules/ArchivStats.sh
 echo "Modules where moved"
 
 # Phase 4 create the main lanucher for all modules
@@ -80,10 +82,11 @@ echo './Modules/Backup-Script-Dell.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Backup-Script-Hp.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh
+echo './Modules/ArchivStats.sh' >> ./Backup-Script-Module-Launcher.sh
 echo "Set time in days after a config gets send to long term Archiv (./OldConfigs)" 
 read achivetime
-echo "find ./Archiv/ -type f -name '*.conf' -mtime $achivetime --exec mv {} ./OldConfigs \;" >> ./Backup-Script-Module-Launcher.sh
-echo "du -sh ./Archiv/ >> ./Log/BackupCheck/log$date.txt" >> ./Backup-Script-Module-Launcher.sh
+echo "find ./Archiv/ -type f -name '*.conf' -mtime $achivetime --exec mv {} ./OldConfigs \;" >> ./Modules/OldConfigsMover.sh
+echo "du -sh ./Archiv/ >> ./Log/BackupCheck/log$date.txt" >> ./Modules/ArchivStats.sh
 echo "Main Launcher where created"
 
 # Phase 5 make the files executable

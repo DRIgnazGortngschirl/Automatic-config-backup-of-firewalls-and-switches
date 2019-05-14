@@ -11,6 +11,7 @@ mkdir --verbose -p Log/{Fortinet,HP,Cisco,DELL,BackupCheck}
 echo "Directories where created"
 
 # Phase 2 create all device list's
+echo "Devices List's"
 echo '# ______ ____  _____ _______ _____ _   _ ______ _______    _____             _' >> ./Devices/Fortinet-Devices.txt
 echo '#|  ____/ __ \|  __ \__   __|_   _| \ | |  ____|__   __|  |  __ \           (_)' >> ./Devices/Fortinet-Devices.txt
 echo '#| |__ | |  | | |__) | | |    | | |  \| | |__     | |     | |  | | _____   ___  ___ ___  ___' >> ./Devices/Fortinet-Devices.txt
@@ -86,8 +87,10 @@ echo './Modules/Backup-Script-Hp.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Backup-Script-Cisco.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/Checker.sh' >> ./Backup-Script-Module-Launcher.sh
 echo './Modules/ArchivStats.sh' >> ./Backup-Script-Module-Launcher.sh
+echo "--------------------------------------------------------------------------------"
 echo "Set days after a config gets commpressed (.gz format) [2,5x-3,5x SMALLER]" 
 read achivetime
+echo "--------------------------------------------------------------------------------"
 echo "find ./Archiv -mtime +$achivetime -exec gzip {} +" >> ./Modules/OldConfigsMover.sh
 echo "du -sh ./Archiv/ >> ./Log/BackupCheck/log$date.txt" >> ./Modules/ArchivStats.sh
 echo "Main Launcher where created"
@@ -107,7 +110,6 @@ chmod --verbose 700 ./Modules/OldConfigsMover.sh
 echo "Modules & Lanucher where modified"
 
 # Phase 6 create SSH Key
-clear
 echo "----------------------------------------"
 echo '1024 bit - ONLY FOR TESTING'
 echo '2048 bit - It is "secure" until 2030!'
